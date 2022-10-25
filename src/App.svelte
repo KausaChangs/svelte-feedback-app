@@ -21,7 +21,7 @@
    ]
 </script>
 
-<main>
+<main class = "container">
   
   <FeedbackList  {feedBack}/>
 
