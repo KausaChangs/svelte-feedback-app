@@ -19,11 +19,17 @@
       text: " And lastly, suprise suprise! Heres some random placeholder boilerplate text for my sample svelte.js feedback app"
     },
    ]
+
+   const deleteFeedback = (e) =>{
+       const itemId = e.detail
+
+       feedBack = feedBack.filter((item)=> item.id != itemId)
+   }
 </script>
 
 <main class = "container">
   
-  <FeedbackList  {feedBack}/>
+  <FeedbackList  {feedBack}  on:delete-feedback = {deleteFeedback}/>
 
   
 </main>
