@@ -1,5 +1,6 @@
 <script>
    import FeedbackList from "./components/FeedbackList.svelte";
+  
 
 
    let feedBack = [
@@ -10,7 +11,7 @@
     },
     {
       id: 2,
-      rating: 9,
+      rating: 7.5,
       text: " Heres some more random placeholder boilerplate text for my sample svelte.js feedback app"
     },
     {
@@ -20,6 +21,10 @@
     },
    ]
 
+   $: count = feedBack.length
+
+   $: average = feedBack.reduce((a, {rating}) => a + rating, 0)/ feedBack.length
+
    const deleteFeedback = (e) =>{
        const itemId = e.detail
 
@@ -28,6 +33,7 @@
 </script>
 
 <main class = "container">
+  <h1>{average}</h1>
   
   <FeedbackList  {feedBack}  on:delete-feedback = {deleteFeedback}/>
 
