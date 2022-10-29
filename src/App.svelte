@@ -1,5 +1,6 @@
 <script>
    import FeedbackList from "./components/FeedbackList.svelte";
+   import FeedbackStats from "./components/FeedbackStats.svelte";
   
 
 
@@ -33,7 +34,8 @@
 </script>
 
 <main class = "container">
-  <h1>{average}</h1>
+
+  <FeedbackStats {count} {average} />
   
   <FeedbackList  {feedBack}  on:delete-feedback = {deleteFeedback}/>
 
