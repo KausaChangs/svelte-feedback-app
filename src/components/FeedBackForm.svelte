@@ -28,7 +28,7 @@
 <form>
     <!--Rating Select-->
     <div class="input-group">
-        <input type="text" on:input={handleInput} placeholder="tell us something that keeps you coming back"/>
+        <input type="text" on:input={handleInput} bind:value = {text} placeholder="tell us something that keeps you coming back"/>
 
         <Button disabled ={btnDisabled} type="submit"> Send</Button>
     </div>
