@@ -12,6 +12,9 @@
     if(text.trim().length <= min){
       ourMessage = `text must be atleast ${min} characters`
       btnDisabled = true
+    }else{
+      ourMessage = null
+      btnDisabled = false
     }
   }
 
@@ -26,8 +29,14 @@
     <!--Rating Select-->
     <div class="input-group">
         <input type="text" on:input={handleInput} placeholder="tell us something that keeps you coming back"/>
+
         <Button disabled ={btnDisabled} type="submit"> Send</Button>
     </div>
+   {#if ourMessage}
+   <div class="message">
+    {ourMessage}
+   </div>
+   {/if}
 </form>
 </Card>
 <style>
