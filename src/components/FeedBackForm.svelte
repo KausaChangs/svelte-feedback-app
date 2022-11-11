@@ -5,6 +5,15 @@
 
   let text = ""
   let btnDisabled = true
+  let min = 12
+  let ourMessage
+
+  const handleInput = () =>{
+    if(text.trim().length <= min){
+      ourMessage = `text must be atleast ${min} characters`
+      btnDisabled = true
+    }
+  }
 
 </script>
 
@@ -16,7 +25,7 @@
 <form>
     <!--Rating Select-->
     <div class="input-group">
-        <input type="text" placeholder="tell us something that keeps you coming back"/>
+        <input type="text" on:input={handleInput} placeholder="tell us something that keeps you coming back"/>
         <Button disabled ={btnDisabled} type="submit"> Send</Button>
     </div>
 </form>
