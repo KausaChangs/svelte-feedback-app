@@ -27,7 +27,7 @@
     <h2>How do you rate our services?</h2>
   </header>
 <form>
-    <!--Rating Select-->
+    <RatingSelect/>
     <div class="input-group">
         <input type="text" on:input={handleInput} bind:value = {text} placeholder="tell us something that keeps you coming back"/>
 
