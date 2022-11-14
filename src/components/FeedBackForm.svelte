@@ -1,9 +1,10 @@
 <script>
   import Button from "./Button.svelte";
-
   import Card from "./Card.svelte";
+  import RatingSelect from "./RatingSelect.svelte";
 
   let text = ""
+  let rating = 10
   let btnDisabled = true
   let min = 12
   let ourMessage
